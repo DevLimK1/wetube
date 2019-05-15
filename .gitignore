@@ -83,7 +83,7 @@ typings/
 .serverless/
 
 # FuseBox cache
-.fusebox/
+.fusebox/ 
 
 # DynamoDB Local files
 .dynamodb/
