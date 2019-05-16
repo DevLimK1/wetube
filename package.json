@@ -5,9 +5,16 @@
   "author": "KyoungWon Lim",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "core-js": "^3.0.1",
     "express": "^4.16.4"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon --exec ./node_modules/.bin/babel-node index.js"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.4",
+    "nodemon": "^1.19.0"
   }
 }

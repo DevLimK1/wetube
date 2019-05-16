@@ -1,19 +1,29 @@
-const express = require("express");
+// const express = require("express");
+import express from "express";
 const app = express();
 
 const PORT = 4000;
 
-function handleListening() {
-  console.log(`Listening on: http://localhost:${PORT}`);
-}
+// function handleListening() {
+//   console.log(`Listening on: http://localhost:${PORT}`);
+// }
 
-function handleHome(req, res) {
-  console.log(req);
-  res.send("Hello frome home");
-}
-function handleProfile(req, res) {
-  res.send("You ar on my profile");
-}
+const handleListening = () =>
+  console.log(`Listening on: http://localhost:${PORT}`);
+
+// function handleHome(req, res) {
+//   console.log(req);
+//   res.send("Hello frome home");
+// }
+
+const handleHome = (req, res) => res.send("Hello from home");
+
+// function handleProfile(req, res) {
+//   res.send("You ar on my profile");
+// } 아래 코드랑 똑같음
+
+const handleProfile = (req, res) => res.send("You are on my profile");
+
 app.get("/", handleHome);
 
 app.get("/profile", handleProfile);
