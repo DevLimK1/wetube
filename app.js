@@ -1,20 +1,11 @@
 // const express = require("express");
 import express from "express";
 import morgan from "morgan";
-import morgan from "helmet";
+import helmet from "helmet";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-
+import { userRouter } from "./router";
 const app = express();
-
-const PORT = 4000;
-
-// function handleListening() {
-//   console.log(`Listening on: http://localhost:${PORT}`);
-// }
-
-const handleListening = () =>
-  console.log(`Listening on: http://localhost:${PORT}`);
 
 // function handleHome(req, res) {
 //   console.log(req);
@@ -45,4 +36,7 @@ app.get("/", handleHome);
 
 app.get("/profile", handleProfile);
 
-app.listen(PORT, handleListening);
+app.use("/user", userRouter);
+// 누군가 내 파일을 불러올때(import)
+// app object를 주겠다는 의미
+export default app;
