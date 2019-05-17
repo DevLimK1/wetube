@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
+import routes from "./routes";
 
 const app = express();
 
@@ -17,9 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(morgan("dev"));
 
-app.use("/", globalRouter);
-app.use("/user", userRouter);
-app.use("/video", videoRouter);
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
 
 // 누군가 내 파일을 불러올때(import)
 // app object를 주겠다는 의미
