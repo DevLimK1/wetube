@@ -9,6 +9,7 @@ userRouter.get(routes.editProfile, (req, res) => res.send("Edit Profile"));
 userRouter.get(routes.changePassword, (req, res) =>
   res.send("Change Password")
 );
+
 export default userRouter;
 
 // M :data
